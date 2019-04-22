@@ -1,0 +1,440 @@
+/**
+ * @class Component 
+ * @constructor
+ * 		Essa classe não deve ser instanciada.
+ * @description
+ * 		Component é uma classe que possui metodos
+ *  	de manipulação e verificação para um DOMElement.
+ * @implements
+ * 		- hasAttrType()
+ * 		- hasAttrSrc()
+ * 
+ * 
+ * 		@method getValue(element) 
+ * 			@public 
+ * 				Esse metodo pode ser usado por todos.
+ * 			@param {DOMELEMENT} element 
+ * 				<input> || <select> || <textarea>
+ * 			@description
+ * 				Esse metodo obtem o valor do elemento passado como parametro.
+ * 			@return {String}
+ * 				Retorna o valor do elemento.
+ * 
+ * 		@method setValue(element,value) 
+ * 			@public 
+ * 				Esse metodo pode ser usado por todos.
+ * 			@param {DOMELEMENT} element 
+ * 				<input> || <select> || <textarea>
+ * 			@description
+ * 				Esse metodo define o valor do elemento passado como parametro.
+ * 			@return {String}
+ * 				Sem retorno.
+ * 		
+ * 		@method isValid(element) 
+ * 			@public 
+ * 				Esse metodo pode ser usado por todos.
+ * 			@param {DOMELEMENT} element 
+ * 				<input> || <select> || <textarea>
+ * 			@description
+ * 				Esse metodo verifica se o parametro passado é um DOM Element <input>,
+ *  			<select> ou <texarea>.
+ * 			@return {Boolean || Throw}
+ * 				Retorna true, se for um elemento valido.
+ * 				Retorno throw(false) com a mensagem de erro, se não for um
+ * 				elemento valido.
+ * 		
+ * 		@method isInput(element) 
+ * 			@public 
+ * 				Esse metodo pode ser usado por todos.
+ * 			@param {DOMELEMENT} element 
+ * 				<input>
+ * 			@description
+ * 				Esse metodo verifica se o parametro passado é um DOM Element <input>.
+ * 			@return {Boolean}
+ * 				Retorna true, se for um <input>
+ * 				Retorno false se não for.
+ * 
+ * 		@method isSelect(element) 
+ * 			@public 
+ * 				Esse metodo pode ser usado por todos.
+ * 			@param {DOMELEMENT} element 
+ * 				<select>
+ * 			@description
+ * 				Esse metodo verifica se o parametro passado é um DOM Element <select>.
+ * 			@return {Boolean}
+ * 				Retorna true, se for um <select>
+ * 				Retorno false se não for.
+ * 
+ * 		@method isTextArea(element) 
+ * 			@public 
+ * 				Esse metodo pode ser usado por todos.
+ * 			@param {DOMELEMENT} element 
+ * 				<textarea>
+ * 			@description
+ * 				Esse metodo verifica se o parametro passado é um DOM Element <textarea>.
+ * 			@return {Boolean}
+ * 				Retorna true, se for um <textarea>
+ * 				Retorno false se não for. 
+ * 
+ * 		@method isEmpty(element) 
+ * 			@public 
+ * 				Esse metodo pode ser usado por todos.
+ * 			@param {DOMELEMENT} element 
+ * 				<input> || <select> || <textarea>
+ * 			@description
+ * 				Esse metodo verifica se o valor do Element está vazio.
+ * 			@return {Boolean}
+ * 				Retorna true, se estiver vazio.
+ * 				Retorno false se não estiver vazio.
+ * 
+ * 		@method isChecked(element) 
+ * 			@public 
+ * 				Esse metodo pode ser usado por todos.
+ * 			@param {DOMELEMENT} element 
+ * 				<input>
+ * 			@description
+ * 				Esse metodo verifica se o Element está marcado como checado.
+ * 			@return {Boolean}
+ * 				Retorna true, se estiver marcado.
+ * 				Retorno false se não estiver marcado.
+ * 
+ * 		@method _length(_element) 
+ * 			@private 
+ * 				Esse metodo so deve ser usado pela classe. 
+ * 			@param {DOMELEMENT} _element 
+ * 				<input> || <select> || <textarea>		
+ * 			@description
+ * 				Esse metodo verifica se o comprimento do elemento passado
+ * 				como parametro é igual a 1.
+ * 			@return {Boolean || Throw}
+ * 				Retorna true, se o comprimento for igual a 1.
+ * 				Retorna throw(false) com a mensagem de erro, se comprimento for
+ * 				diferente de 1.
+ * 				
+ * 		@method _type(_elementTagName) 
+ * 			@private 
+ * 				Esse metodo so deve ser usado pela classe.
+ * 			@param {String} _elementTagName 
+ * 				tagName de um DOMElement		
+ * 			@description
+ * 				Esse metodo recebe como parametro uma String com o nome
+ * 				da tagName de um Dom Element. Ela verifica se o parametro
+ * 				passado é igual a input, selet ou textarea;
+ * 			@return {Throw}
+ * 				Retorno throw(false) com a mensagem de erro, se não for igual
+ * 				a input, select ou textarea.
+ * 
+ * 		@method _getSelectValue(_element) 
+ * 			@private 
+ * 				Esse metodo so deve ser usado pela classe.
+ * 			@param {DOMELEMENT} _element  
+ * 				<select>
+ * 			@description
+ * 				Esse metodo obtem o valor de um DOMElement <select>.
+ * 			@return {String}
+ * 				Retorna o valor.
+ * 
+ * 		@method _getTextareaValue(_element) 
+ * 			@private 
+ * 				Esse metodo so deve ser usado pela classe.
+ * 			@param {DOMELEMENT} _element  
+ * 				<textarea>
+ * 			@description
+ * 				Esse metodo obtem o valor de um DOMElement <textarea>.
+ * 			@return {String}
+ * 				Retorna o valor.
+ * 
+ * 		@method _getInputValue(_element) 
+ * 			@private 
+ * 				Esse metodo so deve ser usado pela classe.
+ * 			@param {DOMELEMENT} _element  
+ * 				<input>
+ * 			@description
+ * 				Esse metodo obtem o valor de um DOMElement <input>.
+ * 			@return {String}
+ * 				Retorna valor.
+ * 
+ * 		@method _setSelectValue(_element,_value) 
+ * 			@private 
+ * 				Esse metodo so deve ser usado pela classe.
+ * 			@param {DOMELEMENT} _element  
+ * 				<select>
+ *	 		@param {String} _value  
+ * 			@description
+ * 				Esse metodo define o valor de um DOMElement <select>.
+ * 			@return {String}
+ * 				sem retorno
+ * 
+ * 		@method _setTextareaValue(_element,_value) 
+ * 			@private 
+ * 				Esse metodo so deve ser usado pela classe.
+ * 			@param {DOMELEMENT} _element  
+ * 				<textarea>
+ * 			@param {String} _value  
+ * 			@description
+ * 				Esse metodo define o valor de um DOMElement <textarea>.
+ * 			@return {String}
+ * 				Sem retorno
+ * 
+ * 		@method _setInputValue(_element,_value) 
+ * 			@private 
+ * 				Esse metodo so deve ser usado pela classe.
+ * 			@param {DOMELEMENT} _element  
+ * 				<input>
+ * 			@param {String} _value  
+ * 			@description
+ * 				Esse metodo define o valor de um DOMElement <input>.
+ * 			@return {String}
+ * 				Sem retorno
+ */
+
+ 
+class Component {
+
+	constructor() {
+		
+		throw new Error('Esse objeto não deve ser instaciado.');
+	}
+
+	
+	// static getValue(element) {
+		
+	// 	let _element = element;
+	// 	let _isValidElement = Component.isValid(_element);
+	// 	let _elementValue = '';
+
+	// 	if (_isValidElement) {
+			
+	// 		if (Component.isSelect(_element))
+	// 			return Component._getSelectValue(_element);
+			
+	// 		if (Component.isTextArea(_element))
+	// 			return Component._getTextareaValue(_element);
+			
+	// 		if(Component.isInput(_element))	
+	// 			return Component._getInputValue(_element);
+	// 	}
+		
+	// 	return _elementValue;
+	// }
+
+
+	// static setValue(element, value) {
+		
+	// 	let _element = element;
+	// 	let _isValidElement = Component.isValid(_element);
+	// 	let _value = Utility.trim(value);
+	
+	// 	if (_isValidElement) {
+			
+	// 		if (Component.isSelect(_element))
+	// 			Component._setSelectValue(_element, _value);
+			
+	// 		if (Component.isTextArea(_element))
+	// 			Component._setTextareaValue(_element, _value);
+			
+	// 		if (Component.isInput(_element))	
+	// 			Component._setInputValue(_element, _value);
+	// 	}
+	// }
+
+	
+	// static isValid(element) {
+
+	// 	let _element = element;
+	// 	let _elementTagName;
+	
+	// 	try {
+			
+	// 		_elementTagName = _element[0].tagName.toLowerCase()
+
+	// 		Component._length(_element);
+	// 		Component._type(_elementTagName);
+	// 		return true;
+
+	// 	} catch (error) {
+
+	// 		throw new Error(error) ;
+	// 	}
+	// };
+
+
+	// static isInput(element) {
+		
+	// 	let _isValidElement = Component.isValid(element);
+	// 	let _tagName
+	
+	// 	if(_isValidElement){
+	
+	// 		_tagName = element[0].tagName.toLowerCase();
+	
+	// 		return _tagName === "input";
+	// 	};
+
+	// 	return false;
+	// };
+		
+
+	// static isSelect(element) {
+		
+	// 	let _isValidElement = Component.isValid(element);
+	// 	let _tagName;
+	
+	// 	if(_isValidElement) {
+
+	// 		_tagName = element[0].tagName.toLowerCase();
+	
+	// 		return _tagName === "select";
+	// 	};
+
+	// 	return false;
+	// };
+
+
+	// static isTextArea(element) {
+		
+	// 	let _isValidElement = Component.isValid(element);
+	// 	let _tagName;
+	
+	// 	if(_isValidElement){
+			
+	// 		_tagName = element[0].tagName.toLowerCase();
+	
+	// 		return _tagName === "textarea";
+	// 	};
+		
+	// 	return false;
+	// };
+
+
+	// static isEmpty(element) {
+		
+	// 	let _isValidElement = Component.isValid(element);
+	// 	let _elementValue = Component.getValue(element);
+	// 	_elementValue = Utility.removeWhiteSpace(_elementValue);
+	
+	// 	return _elementValue.length === 0 ;
+	// }
+
+
+	// static isChecked(element) {
+		
+	// 	let _isInput = Component.isInput(element);
+	// 	let _hasAttrType = hasAttrType(element);
+	
+	// 	if(_isInput && _hasAttrType){
+	
+	// 		let _elementType = element.attr('type').toLowerCase();
+	
+	// 		if (_elementType === "radio" || _elementType === "checkbox") {
+	// 			return element.is(":checked");
+	// 		}
+	// 	}
+	
+	// 	throw new Error('O element não possui uma propriedade checked');
+	// }
+
+
+	// static _length(_element) {
+
+	// 	if(_element.length !== 1){
+	// 		throw new Error('Não é possivel ler Array')};
+	// }
+
+
+	// static _type(_elementTagName) {
+
+	// 	let _validElements = ['input', 'select', 'textarea']
+
+	// 	if( !_validElements.some(type => _elementTagName === type)){
+	// 		throw new Error('Tipo de elemento inválido')};
+	// }
+
+
+	// static _getSelectValue(_element) {
+		
+	// 	let _isSelect = Component.isSelect(_element);
+
+	// 	if(_isSelect)
+	// 		return ('' + _element.find(':selected').val());
+	// }
+
+
+	// static _getTextareaValue(_element) {
+
+	// 	let _isTextArea = Component.isTextArea(_element);
+
+	// 	if (_isTextArea)
+	// 		return ('' + _element.val());
+	// }
+
+
+	// static _getInputValue(_element) {
+
+	// 	let _isInput = Component.isInput(_element);
+	// 	let _hasAttrType = hasAttrType(_element);
+	// 	let _hasAttrSrc = hasAttrSrc(_element);
+
+	// 	if(_isInput && _hasAttrType){
+			
+	// 		let _elementType = _element.attr('type').toLowerCase();
+			
+	// 		if(_elementType === "image"){
+				
+	// 			if(_hasAttrSrc)
+	// 				return ('' + _element.attr('src'));
+
+	// 			return;
+	// 		} 
+
+	// 		return ('' + _element.val());
+	// 	}
+	// }
+
+
+	// static _setSelectValue(_element, _value) {
+		
+	// 	let _isSelect = Component.isSelect(_element);
+	// 	let _elementOption;
+	
+	// 	if(_isSelect){
+	
+	// 		_elementOption = _element.find(':selected:not(:first-child)');
+	// 		_elementOption.attr('value', _value);
+	// 	}
+	// }
+	
+	
+	// static _setTextareaValue(_element, _value) {
+	
+	// 	let _isTextArea = Component.isTextArea(_element);
+	
+	// 	if (_isTextArea)
+	// 		_element.attr('value', _value).text(_value);
+	// }
+	
+
+	// static _setInputValue(_element, _value) {
+	
+	// 	let _isInput = Component.isInput(_element);
+	// 	let _hasAttrType = hasAttrType(_element);
+	// 	let _hasAttrSrc = hasAttrSrc(_element);
+	
+	// 	if(_isInput && _hasAttrType){
+			
+	// 		let _elementType = _element.attr('type').toLowerCase();
+			
+	// 		if(_elementType === "image"){
+				
+	// 			if(_hasAttrSrc)
+	// 				_element.attr('src', _value);
+				
+	// 			return;	
+	// 		} 
+	
+	// 		_element.attr('value', _value);
+	// 		return;
+	// 	}
+	// }
+	
+}

@@ -1,0 +1,74 @@
+/*
+	Objetivo principal, validar formularios com simplicidade e elegancia e sem precisar modificar nada, dando total suport a qualquer tipo de entrada
+ */
+
+
+passo 1: validação generica
+	verificar se os inputs(inpts, selects, textarea) são requeridos.
+		se SIM: verificar se estão vazios(empty)
+			se Sim: retornar false (msg: campo obrigatorio)
+			se Não: retornar true
+		se NÃO: ignorar;
+
+	verificar validação por atributos genericos:
+
+
+
+
+
+
+
+
+passo 2: validação por tipos
+	
+
+	IGNORADOS:
+		button: 
+		color:
+		hidden: 
+	AVALIADOS:
+		checkbox: 
+			required
+		date: 
+			required
+			min
+			max
+		datetime-local:
+			required
+			min
+			max 
+		email: 
+			required
+			maxlength
+			minlength
+			/^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}
+  			[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/
+  			pattern
+		file:
+			requerid
+			validar por tipo de arquivo ou tamanho
+		image: 
+		month: 
+		number: 
+		password:   
+		radio: 
+		range:  
+		search:  
+		tel: 
+		text: 
+			required
+			maxlength
+			minlength
+			pattern
+		time: 
+		url: 
+		week:
+
+	
+	fazer algo do tipo, ter um regex padrao, mas se for definido o pattern, o regex padrao é substituido pelo pattern que o desenvolvedor definiu.
+
+
+
+
+
+	na classe do jquery, chmar a funcao submit do fomr e colocar o validate dentro;

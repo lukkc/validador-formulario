@@ -1,0 +1,23 @@
+{
+  "name": "validacao",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "babel": "babel ./components/*.js --out-dir dest/"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
+    "docdash": "^0.4.0",
+    "grunt": "^1.0.1",
+    "grunt-contrib-clean": "^1.1.0",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-import-js": "^0.1.4",
+    "grunt-jsdoc": "^2.2.0",
+    "jshint": "^2.9.5"
+  }
+}

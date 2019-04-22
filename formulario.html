@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>formulario</title>
+    <link rel="stylesheet" href="formulario.css">
+</head>
+
+<body>
+
+
+    <form action="" id="formulario" novalidate>
+
+        <!-- <div class="group-input">
+            <label class="label" for="nomeCompleto">regex</label>
+            <input type="radio"  id="regex" value="" >
+        </div> -->
+        <div class="group-input">
+            <label class="label" for="nomeCompleto"><b>input0</b></label>
+            <input class="input asd asd" type="date"  min="2017-02-16"  targetMsg="testando" required>
+            <span id="testando"></span>
+  
+        </div>
+        <div class="group-input">
+            <label class="label" for="nomeCompleto">result</label>
+            <textarea name="textarea" type="checkbox" id="regex"  max="2017-W06"></textarea>
+            
+        </div>
+
+        <div class="group-input">
+            <label class="label">select</label>
+            <select name="select" id="regex" required targetMsg="testando1">
+                <option label="selecione" ></option>
+                <option >lucas</option>
+                <option value="asdf" >     </option>
+        
+            </select>
+            <span id="testando1"></span>
+        </div>
+
+
+
+        <!-- <div class="group-input">
+            <label class="label" for="nome">Nome</label>
+            <input type="number" id="input-nome" class="input" name="nome" placeholder="">
+        </div> -->
+        
+        <!-- <div class="group-input">
+            <label class="label" for="nome">Nome</label>
+            <input type="checkbox" id="input-nome" class="input" name="nomecheck" placeholder="" required >
+        </div> -->
+
+        <!-- <div class="group-input">
+            <label class="label" for="sobrenome">Sobrenome</label>
+            <input type="text" id="input-sobrenome" class="input" name="sobrenome" placeholder="" required>
+        </div> -->
+        
+        <div class="group-button">
+            <button type="submit" id="button" class="button js-button_submit" name="button-submit">Enviar</button>
+        </div>
+
+    </form>
+
+    
+
+
+    <script src="jquery-3.2.1.min.js"></script>
+    <script src="js/ForgeValidation.js"></script>
+   
+
+    <script  type="text/javascript" charset="utf-8" async defer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+    $('form').ForgeValidation();
+
+
+    </script>
+</body>
+
+</html>

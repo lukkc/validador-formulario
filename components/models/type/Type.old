@@ -1,0 +1,136 @@
+/**
+ * @implements
+ *      Utility
+ *          .removeWhiteSapce()
+ */
+
+class Type {
+
+    constructor() {
+
+        throw new Error('Esse objeto não deve ser instaciado.');
+    }
+
+
+    // static isNumber(value) {
+   
+    //     let _value = Utility.removeWhiteSpace(value);
+    //     let _regexNumber = /^[\-]?[0-9]+$/g;
+
+    //     _value.length === 0 ? _value = "false" : _value
+
+    //     return _regexNumber.test(_value);
+    // }
+
+
+    // static isLetter(value) {
+     
+    //     let _value = Utility.removeWhiteSpace(value);
+    //     let _regexLetter = /[0-9\_\!\"\#\$\%\&\'\,\(\)\*\+\-\.\/\:\;\<\=\>\?\@\[\\\]\^\`\{\|\}\~\€\‚\„\…\†\‡\‰\‹\‘\’\“\”\•\–\—\˜\™\›\¡\¢\£\¤\¥\¦\§\¨\©\«\¬\®\¯\°\±\²\³\´\¶\·\¸\¹\»\¼\½\¾\¿\×\÷]/;
+
+    //     _value.length === 0 ? _value = "fals3" : _value
+        
+    //     return !_regexLetter.test(_value);
+    // }
+
+
+    // static isSpecialCharacter(value) {
+    
+    //     let _value = Utility.removeWhiteSpace(value);
+    //     let _regexSpecialCharacter = /[^\_\!\"\#\$\%\&\'\,\(\)\*\+\-\.\/\:\;\<\=\>\?\@\[\\\]\^\`\{\|\}\~\€\‚\„\…\†\‡\‰\‹\‘\’\“\”\•\–\—\˜\™\›\¡\¢\£\¤\¥\¦\§\¨\©\«\¬\®\¯\°\±\²\³\´\¶\·\¸\¹\»\¼\½\¾\¿\×\÷]/;
+
+    //     _value.length === 0 ? _value = "false" : _value
+        
+    //     return !(_regexSpecialCharacter.test(_value));
+    // }
+
+
+    // static isWeek(language, week) {
+        
+    //     let _language = ('' + language).toLowerCase();        
+    //     let _week = Utility.removeWhiteSpace(week);
+    //     let _regexWeek;
+
+    //     if(_language !== 'pt' && _language !== 'eng')
+    //         throw new Error('Valor do parametro language esta invalido');
+        
+    //     if(_language === 'eng')
+    //         _regexWeek = /^([0-9]{4})\-[W]{1}([0-9]{2})$/;
+
+    //     else if (_language === 'pt')
+    //         _regexWeek = /^([0-9]{2})[W]?\-([0-9]{4})$/;
+
+    //     return _regexWeek.test(_week);
+    // }
+
+
+    // static isTime(time) {
+        
+    //     let _time = Utility.removeWhiteSpace(time);
+    //     let _regexTime = /^([0-9]{2})\:([0-9]{2})$/;
+
+    //     return _regexTime.test(_time);
+    // }
+
+
+    // static isDate(language, date) {
+        
+    //     let _language = ('' + language).toLowerCase();
+    //     let _date = Utility.removeWhiteSpace(date);
+    //     let _regexDate;
+        
+    //     if(_language === 'eng') 
+    //         _regexDate = /^([0-9]{4})[\/|\-]([0-9]{1,2})[\/|\-]([0-9]{1,2})$/;
+            
+    //     else if (_language === 'pt')
+    //         _regexDate = /^([0-9]{1,2})[\/|\-]([0-9]{1,2})[\/|\-]([0-9]{4})$/;
+        
+    //     else
+    //         throw new Error('Valor do parametro language esta invalido');
+        
+    //     return _regexDate.test(_date);
+    // }
+
+
+    // static isMonth(language, month) {
+        
+    //     let _language = ('' + language).toLowerCase();
+    //     let _month = Utility.removeWhiteSpace(month);
+    //     let _regexMonth;
+    
+    //     if(_language === 'eng')
+    //         _regexMonth = /^([0-9]{4})[\/|\-]([0-9]{1,2})$/;
+        
+    //     else if (_language === 'pt')
+    //         _regexMonth = /^([0-9]{1,2})[\/|\-]([0-9]{4})$/;
+    
+    //     else
+    //         throw new Error('Valor do parametro language esta invalido');
+    
+    //     return _regexMonth.test(_month);
+    // }
+
+
+    // static isDateTime(language, dateTime) {
+        
+    //     let _language = ('' + language).toLowerCase();
+    //     let _dateTime = Utility.removeWhiteSpace(dateTime);
+    //     let _regexDateTime;
+    //     let _regexTime = '\T?([0-9]{2})\:([0-9]{2})$';
+    //     let _regexDate;
+        
+    //     if(_language === 'eng') 
+    //         _regexDate = '^([0-9]{4})[\/|\-]([0-9]{1,2})[\/|\-]([0-9]{1,2})';
+        
+    //     else if (_language === 'pt')
+    //         _regexDate = '^([0-9]{1,2})[\/|\-]([0-9]{1,2})[\/|\-]([0-9]{4})';
+        
+    //     else
+    //         throw new Error('Valor do parametro language esta invalido');
+    
+        
+    //     _regexDateTime = RegExp(_regexDate + _regexTime);
+    
+    //     return _regexDateTime.test(_dateTime);
+    // }
+}

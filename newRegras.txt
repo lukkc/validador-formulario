@@ -1,0 +1,152 @@
+passo 1: methods
+
+
+	isInput()
+		return boolean OK
+
+	isSelect()
+		return boolean OK
+
+	isTextArea()
+		return boolean	OK
+
+	isletters() 
+        return boolean OK
+
+    isNumber()
+        return boolean OK
+
+    isCaracterEspecial() 
+    	return boolean	OK
+
+    isUndefined()
+    	return boolean OK
+
+
+	hasAttrType() OK
+
+	hasAttrRequired() OK
+
+	hasAttrPattern() OK 
+
+	hasAttrMin() OK
+
+	hasAttrMax() OK
+
+	hasAttrMinlength() OK
+
+	hasAttrMaxlength() OK
+
+	hasAttrStep() OK
+
+	hasAttrSrc() OK
+
+
+	getValue()
+		returna valor do elemento OK
+
+	setValue()
+		coloca um valor no elemento OK
+		sem retorno
+
+	trim()
+		retorna o valor do elemento sem os espaços em branco no inicio e no final; OK
+
+	blank()
+		retorna o valor do elemento sem os espaços em branco; OK
+
+	IsEmpty()
+		retorna boolean OK
+
+
+passo 2: estados de validação
+
+	o valor é requerido, mas está em branco
+	valueMissing() OK
+	
+	o valor n bate com o regex do attr pattern
+	patternMisMatch() OK
+
+	o valor é maior que o máximo especificado pelo attr max
+	rangeOverflow() OK
+
+	o valor é menor que o minimo especificado pelo attr min
+	rangeUnderflow() OK
+
+	o valor não se ajusta às regras determinadas pelo attr step
+	stepMismatch()OK
+
+	 o valor excede o especificado no attr maxlength
+	tooLong() OK
+
+	o valor não cumpriu o especificado no attr minlength
+	tooShort() OK
+
+	o valor não está de acordo com o attr type 
+	typeMismatch() 
+
+	verifica se o formulario atende a todas as validações  
+	valid()
+
+
+	passo 3: tipos de entradas
+
+		checkbox: 
+			required
+		date: 
+			required
+			min
+			max
+		datetime-local:
+
+		email: 
+			/^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}
+  			[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/
+		file:
+			validar por tipo de arquivo ou tamanho
+		image: 
+		month: 
+		number: 
+		password:   
+		radio: 
+		range:  
+		search:  
+		tel: 
+		text: 
+			required
+			maxlength
+			minlength
+			pattern
+		time: 
+		url: 
+		week:
+
+
+
+
+
+PADRAO DE PROJETO
+
+	Proxy => o proxy simula um objeto, é possivel acessar o objeto real,
+			 normalmente mmas passando pelo proxy. Eu acesso o proxy e o proxy acessar
+			 o objeto e informa oq sera necessario utilizar, é como se fosse um controlador
+			 ele delega as coisa pro objeto real;
+
+			 Proxy encapsula o objeto.
+			 	e ainda assim pode ter seus proprios metodos;
+
+			O proxy pode ser instanciado com new Proxy();
+			aceita como 1 paramentro o objeto, e segundo uma array de funçoes ou acçoes
+			{
+				get: function(target, prop, receiver){
+					return Reflect.get(target, prop, receiver)
+				
+				},
+				set: function(target, prop, value,  receiver){
+					return Reflect.get(target, prop, value,  receiver)
+				
+				},
+			};
+
+	Factory => 
+		uma classe que fabrica os objetos. 
